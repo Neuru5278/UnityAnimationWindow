@@ -30,7 +30,9 @@ namespace UnityEditorInternal.Enemeteen {
 		// Pptr keyframe preview also needs 1px offset so it sits more tightly in the grid
 		private const float k_PptrKeyframeOffset = -1;
 
-		const int kLabelMarginHorizontal = 8;
+        private static readonly Vector2 k_ControlPointSize = new Vector2(16, 16);
+
+        const int kLabelMarginHorizontal = 8;
 		const int kLabelMarginVertical = 2;
 
 		static private Color s_SelectedKeyColor = new Color32(87, 133, 217, 255);
@@ -140,7 +142,7 @@ namespace UnityEditorInternal.Enemeteen {
 				}
 				else {
 					Rect rect = element.position;
-					rect.size = new Vector2(m_DefaultDopeKeyIcon.width, m_DefaultDopeKeyIcon.height);
+					rect.size = k_ControlPointSize;
 					m_UnselectedKeysRenderer.AddPoint(rect, element.color);
 				}
 			}
@@ -153,7 +155,7 @@ namespace UnityEditorInternal.Enemeteen {
 				}
 				else {
 					Rect rect = element.position;
-					rect.size = new Vector2(m_DefaultDopeKeyIcon.width, m_DefaultDopeKeyIcon.height);
+					rect.size = k_ControlPointSize;
 					m_SelectedKeysRenderer.AddPoint(rect, element.color);
 				}
 			}
@@ -166,7 +168,7 @@ namespace UnityEditorInternal.Enemeteen {
 				}
 				else {
 					Rect rect = element.position;
-					rect.size = new Vector2(m_DefaultDopeKeyIcon.width, m_DefaultDopeKeyIcon.height);
+					rect.size = k_ControlPointSize;
 					m_DragDropKeysRenderer.AddPoint(rect, element.color);
 				}
 			}
