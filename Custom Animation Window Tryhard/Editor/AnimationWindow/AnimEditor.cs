@@ -86,9 +86,10 @@ namespace UnityEditor.Enemeteen {
 
 		internal const int kSliderThickness = 13;
 		internal const int kIntFieldWidth = 35;
-		internal const int kHierarchyMinWidth = 300;
-		internal const int kToggleButtonWidth = 80;
-		internal const float kDisabledRulerAlpha = 0.12f;
+		internal const int kHierarchyMinWidth = 301;
+		internal const int kToggleButtonWidth1 = 76;
+        internal const int kToggleButtonWidth2 = 60;
+        internal const float kDisabledRulerAlpha = 0.12f;
 
 		private int layoutRowHeight {
 			get { return (int) EditorGUI.kWindowToolbarHeight; }
@@ -484,8 +485,8 @@ namespace UnityEditor.Enemeteen {
 
 			GUILayout.FlexibleSpace();
 			EditorGUI.BeginChangeCheck();
-			GUILayout.Toggle(!m_State.showCurveEditor, AnimationWindowStyles.dopesheet, AnimationWindowStyles.miniToolbarButton, GUILayout.Width(kToggleButtonWidth));
-			GUILayout.Toggle(m_State.showCurveEditor, AnimationWindowStyles.curves, EditorStyles.toolbarButtonRight, GUILayout.Width(kToggleButtonWidth));
+			GUILayout.Toggle(!m_State.showCurveEditor, AnimationWindowStyles.dopesheet, AnimationWindowStyles.miniToolbarButton, GUILayout.Width(kToggleButtonWidth1));
+			GUILayout.Toggle(m_State.showCurveEditor, AnimationWindowStyles.curves, EditorStyles.toolbarButtonRight, GUILayout.Width(kToggleButtonWidth2));
 			if (EditorGUI.EndChangeCheck()) {
 				SwitchBetweenCurvesAndDopesheet();
 			}
